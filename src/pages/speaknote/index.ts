@@ -1,0 +1,1 @@
+export { SpeakNotePage } from './SpeakNotePage';

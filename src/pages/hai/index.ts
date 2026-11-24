@@ -1,0 +1,1 @@
+export { HaiPage } from './HaiPage';

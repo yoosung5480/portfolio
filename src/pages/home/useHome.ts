@@ -11,7 +11,7 @@ const projectDetails: Record<
     field: 'COMPUTER VISION',
     summary:
       '데이터 구축부터 모델 학습·추론까지 직접 설계했습니다. 리더보드 weighted AUC 0.94를 기록했습니다.',
-    result: 'Hecto AI Challenge 최종 6위',
+    result: 'Hecto AI Challenge 코드 재현통과, 최종 Top10 본선 진출',
   },
   speaknote: {
     field: 'RETRIEVAL SYSTEMS',
@@ -28,12 +28,12 @@ const projectDetails: Record<
   'sunghyun-accounting': {
     field: 'DOCUMENT AUTOMATION',
     summary: '등기부등본, 감정평가서, 저당목록을 대조해 담보물 배분표를 엑셀로 작성합니다.',
-    result: '배분표 생성 268초 · 가중 F1 93.00점',
+    result: '배분표 생성 268초 · 가중 F1 93.00점   (Opus5는 3시간소요 · 가중 F1 62.49점) ',
   },
   undertone: {
     field: 'CONVERSATIONAL AI',
     summary: '대화에 맞는 답변 후보를 만들고, 골든셋으로 검증한 평가 기준에 따라 추천합니다.',
-    result: '추천 지연 55초 → 3.1초',
+    result: '부산대 딥러닝 PBL 팀 프로젝트 우수상, 추천 지연 55초 → 3.1초',
   },
 };
 
@@ -76,26 +76,31 @@ const portfolio: Omit<HomeModel, 'carousel'> = {
   ],
   research: [
     {
-      date: '2024.07 – 2026.02',
-      name: '부산대학교 컴퓨터비전 연구실 VIPLAB',
-      detail: '학부연구생',
+      date: '2026.7.27 – 2026.08.07',
+      name: '성현회계법인 담보물배분표 분석 자동화 프로젝트',
+      detail: '실무를 LangChain기반 AI Agentic 시스템 개발을 통해 해결. 비정형 pdf 3종 데이터추출과 대조 및 엑셀시트 작성 자동화',
+    },
+    {
+      date: '2026.07.13 – 2026.07.20',
+      name: 'UnderTone',
+      detail: 'BM25를 활용한 실시간 추천 맥락반환 RAG시스템. 좋은 맥락이라는 모호한 문제를 골든셋 구성과 검증체계를 통해 수치화',
     },
     {
       date: '2025.12 – 2026.02',
       name: 'HAI · Hecto AI Challenge',
-      detail: '딥페이크 감지 모델 개발. Private Score 리더보드 11위 / 468팀.',
+      detail: '딥페이크 감지 모델 개발대회. 데이터수집 부터 모델 선정 및 추론 파이프라인 개발후 Docker 이미지 제출로 코드 재현성 평가',
     },
     {
-      date: '2025.05 – 2025.11',
-      name: 'VIPLAB · 독도 수중 어종 객체탐지',
+      date: '2025.05 – 2025.10',
+      name: 'SpeakNote',
       detail:
-        '진행 중인 연구실 팀 프로젝트에 합류해 해양 산호초 세그멘테이션 데이터셋을 활용했습니다. 기존 YOLO 모델의 mAP@0.5를 0.902에서 0.911로 개선했습니다.',
+        '자동 강의 기록을 하고, 부연 설명 주석을 생성하는 실시간 CRAG기반 학습도움 웹서비스, 비동기로 병렬처리, 코루틴으로 누적지연 해소',
     },
     {
       date: '2025.05 – 2025.12',
       name: 'AutoFineTuner',
       detail:
-        '머신러닝 실험 자동화 하네스 개발. 사람 개입없이 타이타닉 리더보드 0.72727 -> 0.78947 자가개선 (GPT-4.1기준)',
+        '머신러닝 실험 자동화 하네스 개발. 사람 개입없이 타이타닉 리더보드 0.78947 달성, 30회 장기연속 튜닝 실험성공 (GPT-4.1기준)',
     },
     {
       date: '2025.05 – 2025.11',
@@ -104,10 +109,9 @@ const portfolio: Omit<HomeModel, 'carousel'> = {
         '진행 중인 연구실 팀 프로젝트에 합류해 해양 산호초 세그멘테이션 데이터셋을 활용했습니다. 기존 YOLO 모델의 mAP@0.5를 0.902에서 0.911로 개선했습니다.',
     },
     {
-      date: '2025.05 – 2025.11',
-      name: 'VIPLAB · 독도 수중 어종 객체탐지',
-      detail:
-        '진행 중인 연구실 팀 프로젝트에 합류해 해양 산호초 세그멘테이션 데이터셋을 활용했습니다. 기존 YOLO 모델의 mAP@0.5를 0.902에서 0.911로 개선했습니다.',
+      date: '2024.07 – 2026.02',
+      name: '부산대학교 컴퓨터비전 연구실 VIPLAB',
+      detail: '학부연구생',
     },
   ],
   skills: [

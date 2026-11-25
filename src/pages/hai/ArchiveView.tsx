@@ -46,7 +46,7 @@ const figures = [
   { src: figure19, width: 2682, height: 1198, description: "분류기 구조별 실험과 결과 비교" },
   { src: figure20, width: 2714, height: 1048, description: "디퓨전 학습 데이터 비율별 결과와 최종 모델 선택" },
   { src: figure21, width: 1954, height: 1044, description: "Private 리더보드에서 11위, 점수 0.94073을 기록한 화면" },
-  { src: figure22, width: 1954, height: 1044, description: "코드 검증을 거친 오프라인 발표 진출팀 안내" },
+  { src: figure22, width: 1954, height: 1044, description: "코드 검증을 거친 오프라인 발표 진출팀 단체사진" },
 ];
 
 function ArchiveFigure({ index }: { index: number }) {

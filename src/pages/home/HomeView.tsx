@@ -2,6 +2,7 @@ import { brand } from '../../shared/ui/brand/brand';
 import { Icon } from '../../shared/ui/icon/Icon';
 import type { HomeModel, RecordEntry } from './types';
 import portrait from './assets/portrait.webp';
+import resumePdf from '../../shared/assets/ai-engineer-resume.pdf?url';
 import { ProjectCarousel } from './ProjectCarousel';
 import s from './Home.module.css';
 
@@ -50,6 +51,14 @@ export function HomeView({ model }: { model: HomeModel }) {
             <a href={`mailto:${brand.email}`}>{brand.email}</a>
             <a href="tel:+821024205480">010-2420-5480</a>
           </div>
+          <a
+            className={s.resumeDownload}
+            href={resumePdf}
+            download="마스터 AI Engineer 지원 이력서.pdf"
+          >
+            <Icon name="down" size={18} />
+            이력서 내려받기 <span lang="en">PDF</span>
+          </a>
         </aside>
         <ProjectCarousel projects={model.projects} controls={model.carousel} />
       </div>

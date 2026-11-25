@@ -25,6 +25,16 @@ const projectDetails: Record<
       '실험 코드를 실행하고 오류를 스스로 복구합니다. 2025년 10월 Kaggle 타이타닉 점수 0.779를 기록했습니다.',
     result: '2025 오픈소스 개발자대회 동상',
   },
+  'sunghyun-accounting': {
+    field: 'DOCUMENT AUTOMATION',
+    summary: '등기부등본, 감정평가서, 저당목록을 대조해 담보물 배분표를 엑셀로 작성합니다.',
+    result: '배분표 생성 268초 · 가중 F1 93.00점',
+  },
+  undertone: {
+    field: 'CONVERSATIONAL AI',
+    summary: '대화에 맞는 답변 후보를 만들고, 골든셋으로 검증한 평가 기준에 따라 추천합니다.',
+    result: '추천 지연 55초 → 3.1초',
+  },
 };
 
 const portfolio: Omit<HomeModel, 'carousel'> = {

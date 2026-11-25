@@ -20,6 +20,14 @@ const OpenSourcePage = lazy(() =>
     default: module.OpenSourcePage,
   })),
 );
+const SunghyunAccountingPage = lazy(() =>
+  import('../pages/sunghyun-accounting').then((module) => ({
+    default: module.SunghyunAccountingPage,
+  })),
+);
+const UndertonePage = lazy(() =>
+  import('../pages/undertone').then((module) => ({ default: module.UndertonePage })),
+);
 
 function PagePosition() {
   usePagePosition();
@@ -56,6 +64,8 @@ export function App() {
             <Route path="/hai" element={<HaiPage />} />
             <Route path="/speaknote" element={<SpeakNotePage />} />
             <Route path="/open-source" element={<OpenSourcePage />} />
+            <Route path="/sunghyun-accounting" element={<SunghyunAccountingPage />} />
+            <Route path="/undertone" element={<UndertonePage />} />
             <Route path="*" element={<MissingPage />} />
           </Routes>
           <PagePosition />

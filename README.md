@@ -38,8 +38,10 @@ portfolio/
 ├── src/
 │   ├── main.tsx        # React 앱 시작점
 │   ├── app/App.tsx     # URL 라우팅과 공통 레이아웃 연결
-│   ├── pages/          # home/, hai/, speaknote/, open-source/ 독립 모듈
+│   ├── pages/          # 랜딩페이지와 프로젝트별 독립 모듈
 │   └── shared/
+│       ├── assets/     # 이력서 PDF 등 공용 파일
+│       ├── data/       # 프로젝트 목록
 │       ├── hooks/      # 공통 동작
 │       └── ui/         # 공통 컴포넌트와 스타일
 ├── index.html          # HTML 진입점

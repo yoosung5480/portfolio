@@ -63,23 +63,27 @@
 .figure { margin-block: 1.5rem; }
 .figure a { display: block; background: #fff; border: 1px solid var(--line); border-radius: .35rem; padding: .9rem; cursor: zoom-in; }
 .figure img { width: auto; height: auto; margin: auto; max-height: 35rem; object-fit: contain; }
-.figure figcaption, .content .note { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+.figure figcaption { font-size: .88rem; color: var(--muted); line-height: 1.65; }
 .figure figcaption { margin-top: .48rem; }
 .scores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.3rem 0 .8rem; padding: 1.2rem 1.5rem; border-radius: .38rem; background: var(--panel); color: #eff5f0; }
 .scores dt { color: #bfd0c2; font-size: .87rem; }
 .scores dd { margin: .15rem 0 0; font: 560 clamp(1.35rem, 3vw, 2.6rem)/1.35 var(--mono); letter-spacing: -.045em; }
 .scores > div:last-child dd { color: var(--mint); }
-.textLink, .transcript a { color: var(--accent); text-underline-offset: .22em; }
-.original { border-block: 1px solid var(--line); }
-.original summary { padding: 1rem .15rem; cursor: pointer; font-weight: 650; }
-.transcript { max-width: 52rem; margin: 0 auto 2rem; padding-top: .5rem; line-height: 1.85; }
-.transcript h3, .transcript h4, .transcript h5 { margin: 1.4em 0 .4em; font-size: 1.05rem; }
-.transcript h3 { font-size: 1.5rem; }
-.transcript h4 { font-size: 1.23rem; }
-.transcript p { margin-block: .6em; }
-.transcript ul { padding-left: 1.35em; }
-.transcript a { overflow-wrap: anywhere; }
-.transcript pre { max-width: 100%; overflow-x: auto; padding: 1rem; background: var(--panel); color: #eaf3ec; border-radius: .32rem; font: .84rem/1.65 var(--mono); }
+.textLink, .documentBody a { color: var(--accent); text-underline-offset: .22em; }
+.documentBody { min-width: 0; line-height: 1.85; }
+.documentBody p + p { margin-top: .85rem; }
+.documentBody h3 { margin: 1.35rem 0 .5rem; font-size: 1.15rem; }
+.documentBody ul { padding-inline-start: 1.35rem; }
+.documentBody li + li { margin-top: .35rem; }
+.documentBody pre { max-width: 100%; overflow-x: auto; padding: 1rem; background: var(--panel); color: #eaf3ec; border-radius: .32rem; font: .84rem/1.65 var(--mono); }
+.videoFrame { width: 100%; aspect-ratio: 16 / 9; background: var(--ink); border-radius: .4rem; }
+.videoFrame > button, .videoFrame > iframe { position: relative; display: block; width: 100%; height: 100%; padding: 0; border: 0; border-radius: inherit; }
+.videoFrame > button { overflow: hidden; cursor: pointer; background: var(--ink); }
+.videoFrame img { width: 100%; height: 100%; object-fit: cover; }
+.playIcon { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 4rem; height: 3rem; border-radius: .75rem; background: #183a2f; }
+.playIcon::after { content: ''; margin-left: .2rem; border-block: .55rem solid transparent; border-left: .95rem solid white; }
+.videoFrame button:hover .playIcon, .videoFrame button:focus-visible .playIcon { background: var(--accent); }
+.videoFrame + a { margin-top: .65rem; }
 @media (max-width: 800px) {
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem 1rem; }
   .requirements { grid-template-columns: 1fr; gap: .95rem; }

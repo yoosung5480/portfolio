@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDocumentTitle } from '../../shared/hooks/useDocumentTitle';
 import type { OpenSourceModel } from './types';
 import poster from './assets/contest-poster.jpg';
@@ -9,16 +10,29 @@ import recovery from './assets/recovery.webp';
 import prompt from './assets/prompt-builder.webp';
 import containerCode from './assets/container.py.txt?raw';
 
-const project: OpenSourceModel = {
+const documentSections = {
+  original: { id: 'original', label: '개발 배경과 목표' },
+  requirements: { id: 'requirements', label: '자동화 요구사항' },
+  workflow: { id: 'workflow', label: '워크플로우 설계 과정' },
+  contract: { id: 'file-contract', label: '파일 구조와 실행 규약' },
+  system: { id: 'implementation', label: '코드 재작성과 오류 복구' },
+  demo: { id: 'demo', label: '시연 영상' },
+  lessons: { id: 'lessons', label: '개발을 통해 배운 점' },
+};
+const videoId = 'XO9hHy1wwx8';
+
+const project: Omit<OpenSourceModel, 'demoPlaying' | 'playDemo'> = {
   sections: [
     { id: 'automation-scope', label: '실험 자동화의 범위' },
     { id: 'architecture', label: '아키텍처와 자가 복구' },
     { id: 'results', label: '타이타닉 실험 결과' },
     { id: 'review', label: '성과와 회고' },
-    { id: 'original', label: '프로젝트 원문과 설계 자료' },
+    ...Object.values(documentSections),
   ],
+  documentSections,
   contestUrl: 'https://www.oss.kr/pages/2',
-  demoUrl: 'https://youtu.be/XO9hHy1wwx8?si=JQ4KbtMvoBccL1p1',
+  demoUrl: `https://youtu.be/${videoId}`,
+  demoEmbedUrl: `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`,
   requirements: [
     '입력 코드를 반복 실행할 수 있도록 재작성',
     '생성한 코드 점검 및 실패 시 자가 복구',
@@ -38,5 +52,6 @@ const project: OpenSourceModel = {
 
 export function useOpenSource(): OpenSourceModel {
   useDocumentTitle('AutoFineTuner · 2025 오픈소스 개발자대회');
-  return project;
+  const [demoPlaying, setDemoPlaying] = useState(false);
+  return { ...project, demoPlaying, playDemo: () => setDemoPlaying(true) };
 }

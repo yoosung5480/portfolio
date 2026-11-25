@@ -8,7 +8,7 @@ import type { OpenSourceModel } from './types';
 import styles from './OpenSource.module.css';
 
 export function OpenSourceView({ model }: { model: OpenSourceModel }) {
-  const [scope, architecture, results, review, original] = model.sections;
+  const [scope, architecture, results, review] = model.sections;
   return <article>
     <header className={styles.hero}>
       <div className={styles.wrap}>
@@ -18,7 +18,7 @@ export function OpenSourceView({ model }: { model: OpenSourceModel }) {
             <p className={styles.field} lang="en">ML Automation</p>
             <h1>AutoFineTuner</h1>
             <p className={styles.lead}>머신러닝 코드를 여러 조건으로 반복 실행하고, 오류가 생기면 이전 실행 기록을 읽어 코드를 고치는 실험 자동화 도구입니다.</p>
-            <a className={styles.demo} href={model.demoUrl} target="_blank" rel="noreferrer">시연 영상 보기 <Icon name="link" size={16} /></a>
+            <Link className={styles.demo} to={{ pathname: '/open-source', hash: `#${model.documentSections.demo.id}` }}>시연 영상 보기</Link>
           </div>
           <div className={styles.cover}><ProjectCover slug="open-source" /></div>
         </div>
@@ -65,7 +65,6 @@ export function OpenSourceView({ model }: { model: OpenSourceModel }) {
             <div><dt>최초 실행 점수</dt><dd>0.72727</dd></div>
             <div><dt>자동 튜닝 후 점수</dt><dd>0.78947</dd></div>
           </dl>
-          <p className={styles.note}>위 수치는 프로젝트 상세 기록의 제출 비교값입니다. 포트폴리오 요약에는 2025년 10월 기준 점수가 0.779, 순위가 상위 8%로 기록돼 있습니다.</p>
         </div>
       </section>
 
@@ -77,13 +76,7 @@ export function OpenSourceView({ model }: { model: OpenSourceModel }) {
           <a className={styles.textLink} href={model.contestUrl} target="_blank" rel="noreferrer">오픈소스 개발자대회 안내 <Icon name="link" size={14} /></a>
         </div>
       </section>
-      <section className={styles.section}>
-        <h2 id={original.id} tabIndex={-1} className={styles.sectionTitle}>{original.label}</h2>
-        <details className={styles.original}>
-          <summary>원문 읽기</summary>
-          <OriginalDocument model={model} />
-        </details>
-      </section>
+      <OriginalDocument model={model} />
     </ProjectLayout>
   </article>;
 }
